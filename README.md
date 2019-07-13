@@ -1,4 +1,4 @@
-# Functions lab 1
+   nni# Functions lab 1
 
 Fork and clone this repo. On your fork, answer and commit the follow questions. When you are finished, submit the link to your repo on Canvas.
 
@@ -15,8 +15,24 @@ func totalWithTax() {
 
 }
 ```
+```
+let itemCost = 45.0
+let nyTax = 0.08775
+
+func totalWithTax() {
+    print(itemCost * (1.0 + nyTax))
+}
+totalWithTax()
+```
 
 Then, modify the function you implemented to have a return type of `Int`, and use an external name that looks more readable. Function calls should look something like "total cost of the item after tax"
+```
+func totalWithTax(of itemCost: Double, after nyTax:Double)->Double {
+    return(itemCost * (1.0 + nyTax))
+}
+totalWithTax(of: itemCost, after: nyTax)
+```
+
 
 ## Question 2
 
@@ -33,7 +49,18 @@ if todaysTemperature <= 40 {
     print("Weather is moderate.")
 }
 ```
-
+```
+func typeOfWeather (temp:Int) -> String {
+if todaysTemperature <= 40 {
+    return "It's cold out."
+} else if todaysTemperature >= 85 {
+    return "It's really warm."
+} else {
+    return "Weather is moderate."
+}
+}
+print(typeOfWeather(temp: todaysTemperature))
+```
 
 ## Question 3
 
@@ -46,7 +73,16 @@ Example:
 Input: `min2(a:1, b:2)`
 
 Output: `1`
-
+```
+func min2(a: Int, b: Int) -> Int {
+if a < b {
+    return a
+}else{
+    return b
+}
+}
+print(min2(a: 3, b: 2))
+```
 
 ## Question 4
 
@@ -59,12 +95,25 @@ Example:
 Input: `lastDigit(12345)`
 
 Output: `5`
-
+```
+func lastDigit(_ number: Int) -> Int{
+    return number % 10
+}
+print(lastDigit(lastDigit(12345)))
+```
 
 ## Question 5
 
 Write a function that takes in any two positive integers and return the sum.
-
+```
+func posNum (a: Int, b: Int)->Int?{
+    if a > 0 && b > 0 {
+    return a + b
+}
+    return nil
+}
+print(posNum(a: 5, b: 3))
+```
 
 ## Question 6
 
@@ -78,13 +127,35 @@ Write a function takes in any number grade and returns a corresponding letter gr
 | 70 - 79 | C |
 | 65 - 69 | D |
 | Below 65 | F |
+```
+func numLet (_ number: Int) -> String? {
+    if number < 65 {
+    return "F"
+}
+    if number >= 65 && number <= 69 {
+    return "D"
+}
+    if number >= 70 && number <= 79 {
+    return "C"
+}
+    if number >= 80 && number <= 89 {
+    return "B"
+}
+    if number >= 90 && number <= 99 {
+    return "A"
+}else{
+    return nil
+    }
+}
+print(numLet(91))
+```
 
 
 ## Question 7
 
 Make a calculator function that takes in three parameters (two numbers and one operator) and returns the answer of the operation.
 
-Operator parameter: (+, -, x, /)
+Operator parameter: (+, -, x, /)i
 
 
 ## Question 8
